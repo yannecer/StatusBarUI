@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.listview);
         ImageView imageView = new ImageView(this);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setImageResource(R.mipmap.banner);
+        imageView.setImageResource(R.mipmap.bannerrr);
 
         listview.addHeaderView(imageView);
         listview.setAdapter(new AAdapter(this));
