@@ -64,6 +64,15 @@ public class StatusbarUI {
             darkModeFlag = field.getInt(layoutParams);
             Method extraFlagField = clazz.getMethod("setExtraFlags", int.class, int.class);
             extraFlagField.invoke(activity.getWindow(), darkmode ? darkModeFlag : 0, darkModeFlag);
+
+
+
+            //miui9和原生一样
+            int lightOption = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+            int darkOption = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            activity.getWindow().getDecorView().setSystemUiVisibility(darkmode ? darkOption : lightOption);
+
+
             return true;
         } catch (Exception e) {
             e.printStackTrace();
